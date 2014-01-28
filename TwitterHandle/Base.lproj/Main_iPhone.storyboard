@@ -19,7 +19,7 @@
             </objects>
             <point key="canvasLocation" x="-334" y="101"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Timeline-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="THViewController" sceneMemberID="viewController">
@@ -49,13 +49,46 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UBE-73-Ja9"/>
+                    <navigationItem key="navigationItem" title="Timeline" id="UBE-73-Ja9">
+                        <barButtonItem key="backBarButtonItem" title="Timeline" id="B0D-6Z-wKg"/>
+                        <barButtonItem key="leftBarButtonItem" title="Me" id="WRa-MB-gWm">
+                            <connections>
+                                <action selector="meButtonPressed:" destination="vXZ-lx-hvc" id="6Yr-4D-grh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="cjf-8y-psd">
+                            <connections>
+                                <action selector="composeButtonPressed:" destination="vXZ-lx-hvc" id="2Jg-ug-SHw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="DPF-VD-iyj" id="1AY-L5-Pf1"/>
+                        <segue destination="huj-BO-9a4" kind="push" id="xOw-R8-ncL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="125" y="101"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fUo-MF-Zh9">
+            <objects>
+                <viewController id="huj-BO-9a4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bXd-UY-G93"/>
+                        <viewControllerLayoutGuide type="bottom" id="32H-DU-k0R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xrb-mK-nwg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kdz-hh-PtQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aUp-cg-k9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="594" y="-354"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

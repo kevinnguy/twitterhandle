@@ -32,8 +32,7 @@ NSString * const kCellIdentifier = @"THTableViewCellIdentifier";
 
 @implementation THViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     [self setupTableView];
@@ -69,6 +68,20 @@ NSString * const kCellIdentifier = @"THTableViewCellIdentifier";
     self.today = [NSDate date];
     [self.tableView reloadData];
 }
+
+#pragma mark - Button pressed
+- (IBAction)meButtonPressed:(id)sender {
+}
+
+- (IBAction)composeButtonPressed:(id)sender {
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+}
+
+
 
 #pragma mark - UITableViewDataSource 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -109,7 +122,7 @@ NSString * const kCellIdentifier = @"THTableViewCellIdentifier";
     // Setup data
     THStatus *status = [[THStatus alloc] initWithJSON:self.timelineMutableArray[indexPath.row]];
     [cell.userImageView setImageWithURL:status.user.profileImageURL placeholderImage:[UIImage imageNamed:@"twitter"]];
-
+    
     NSString *statusText = status.text;
     for (NSDictionary *urlDictionary in status.urls) {
         statusText = [statusText stringByReplacingOccurrencesOfString:urlDictionary[@"url"] withString:urlDictionary[@"display_url"]];
@@ -123,6 +136,7 @@ NSString * const kCellIdentifier = @"THTableViewCellIdentifier";
     return cell;
 }
 
+#pragma mark - SWTableViewCellDelegate
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index {
     if ([cell isKindOfClass:[THTableViewCell class]]) {
         if (index == INFO) {
