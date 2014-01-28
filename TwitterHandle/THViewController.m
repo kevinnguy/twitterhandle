@@ -12,11 +12,16 @@
 #import <STTwitter/STTwitter.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
-@interface THViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface THViewController () <UITableViewDataSource, UITableViewDelegate, SWTableViewCellDelegate>
 @property (nonatomic, strong) NSMutableArray *timelineMutableArray;
 @property (nonatomic, strong) UIAlertView *loginAlertView;
 @property (nonatomic, strong) STTwitterAPI *twitterAPI;
 @end
+
+#define INFO 0
+#define FAVORITE 1
+#define RETWEET 0
+#define REPLY 1
 
 NSString * const kConsumerKey = @"6JYUzex0It4PQfWTiS4wCg";
 NSString * const kConsumerSecret = @"sj4COCp51j0SZAWRE4MVlgtqwbS29P2S7SDLmGfN58U";
@@ -78,7 +83,55 @@ NSString * const kCellIdentifier = @"THTableViewCellIdentifier";
     [cell.userImageView setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"twitter"]];
     cell.statusLabel.text = status;
     
+    // SWTableViewCell
+    __weak THTableViewCell *weakCell = cell;
+    [cell setAppearanceWithBlock:^{
+        weakCell.containingTableView = tableView;
+        
+        NSMutableArray *leftUtilityButtons = [NSMutableArray new];
+        NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+        
+        [leftUtilityButtons sw_addUtilityButtonWithColor:
+         [UIColor colorWithRed:230.0f/255.0f green:126.0f/255.0f blue:34.0f/255.0f alpha:1.0]
+                                                    icon:[UIImage imageNamed:@"info"]];
+        [leftUtilityButtons sw_addUtilityButtonWithColor:
+         [UIColor colorWithRed:241.0f/255.0f green:196.0f/255.0f blue:15.0f/255.0f alpha:1.0]
+                                                    icon:[UIImage imageNamed:@"favorite"]];
+        
+        [rightUtilityButtons sw_addUtilityButtonWithColor:
+         [UIColor colorWithRed:46.0f/255.0f green:204.0f/255.0f blue:113.0f/255.0f alpha:1.0]
+                                                    icon:[UIImage imageNamed:@"retweet"]];
+        [rightUtilityButtons sw_addUtilityButtonWithColor:
+         [UIColor colorWithRed:52.0f/255.0f green:152.0f/255.0f blue:219.0f/255.0f alpha:1.0]
+                                                    icon:[UIImage imageNamed:@"reply"]];
+        
+        weakCell.leftUtilityButtons = leftUtilityButtons;
+        weakCell.rightUtilityButtons = rightUtilityButtons;
+        weakCell.delegate = self;
+    } force:NO];
+    [cell setCellHeight:cell.frame.size.height];
+    
     return cell;
+}
+
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index {
+    if ([cell isKindOfClass:[THTableViewCell class]]) {
+        if (index == INFO) {
+            
+        } else if (index == FAVORITE) {
+            
+        }
+    }
+}
+
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+    if ([cell isKindOfClass:[THTableViewCell class]]) {
+        if (index == RETWEET) {
+            
+        } else if (index == REPLY) {
+            
+        }
+    }
 }
 
 

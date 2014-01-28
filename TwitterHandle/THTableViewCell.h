@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface THTableViewCell : UITableViewCell
+#import <SWTableViewCell/SWTableViewCell.h>
+
+@interface THTableViewCell : SWTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @end
