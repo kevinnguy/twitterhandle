@@ -9,6 +9,8 @@
 #import "THViewController.h"
 #import "THTableViewCell.h"
 
+#import "THStatus.h"
+
 #import <STTwitter/STTwitter.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
@@ -16,6 +18,7 @@
 @property (nonatomic, strong) NSMutableArray *timelineMutableArray;
 @property (nonatomic, strong) UIAlertView *loginAlertView;
 @property (nonatomic, strong) STTwitterAPI *twitterAPI;
+@property (nonatomic, strong) NSDate *today;
 @end
 
 #define INFO 0
@@ -53,13 +56,18 @@ NSString * const kCellIdentifier = @"THTableViewCellIdentifier";
         // Get messages
         [weakSelf.twitterAPI getHomeTimelineSinceID:nil count:100 successBlock:^(NSArray *statuses) {
             weakSelf.timelineMutableArray = [statuses mutableCopy];
-            [weakSelf.tableView reloadData];
+            [weakSelf reloadTableViewData];
         } errorBlock:^(NSError *error) {
 
         }];
     } errorBlock:^(NSError *error) {
 
     }];
+}
+
+- (void)reloadTableViewData {
+    self.today = [NSDate date];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource 
@@ -69,21 +77,8 @@ NSString * const kCellIdentifier = @"THTableViewCellIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     THTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-    NSDictionary *statusDictionary = self.timelineMutableArray[indexPath.row];
-    NSDictionary *entitiesDictionary = statusDictionary[@"entities"];
-    NSDictionary *urlsArray = entitiesDictionary[@"urls"];
-    NSDictionary *userDictionary = statusDictionary[@"user"];
-    NSURL *imageURL = [NSURL URLWithString:userDictionary[@"profile_image_url_https"]];
-    NSString *status = statusDictionary[@"text"];
     
-    for (NSDictionary *urlDictionary in urlsArray) {
-        status = [status stringByReplacingOccurrencesOfString:urlDictionary[@"url"] withString:urlDictionary[@"display_url"]];
-    }
-    
-    [cell.userImageView setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"twitter"]];
-    cell.statusLabel.text = status;
-    
-    // SWTableViewCell
+    // SWTableViewCell setup
     __weak THTableViewCell *weakCell = cell;
     [cell setAppearanceWithBlock:^{
         weakCell.containingTableView = tableView;
@@ -100,16 +95,30 @@ NSString * const kCellIdentifier = @"THTableViewCellIdentifier";
         
         [rightUtilityButtons sw_addUtilityButtonWithColor:
          [UIColor colorWithRed:46.0f/255.0f green:204.0f/255.0f blue:113.0f/255.0f alpha:1.0]
-                                                    icon:[UIImage imageNamed:@"retweet"]];
+                                                     icon:[UIImage imageNamed:@"retweet"]];
         [rightUtilityButtons sw_addUtilityButtonWithColor:
          [UIColor colorWithRed:52.0f/255.0f green:152.0f/255.0f blue:219.0f/255.0f alpha:1.0]
-                                                    icon:[UIImage imageNamed:@"reply"]];
+                                                     icon:[UIImage imageNamed:@"reply"]];
         
         weakCell.leftUtilityButtons = leftUtilityButtons;
         weakCell.rightUtilityButtons = rightUtilityButtons;
         weakCell.delegate = self;
     } force:NO];
     [cell setCellHeight:cell.frame.size.height];
+    
+    // Setup data
+    THStatus *status = [[THStatus alloc] initWithJSON:self.timelineMutableArray[indexPath.row]];
+    [cell.userImageView setImageWithURL:status.user.profileImageURL placeholderImage:[UIImage imageNamed:@"twitter"]];
+
+    NSString *statusText = status.text;
+    for (NSDictionary *urlDictionary in status.urls) {
+        statusText = [statusText stringByReplacingOccurrencesOfString:urlDictionary[@"url"] withString:urlDictionary[@"display_url"]];
+    }
+    cell.statusLabel.text = statusText;
+
+    NSTimeInterval secondsBetween = [self.today timeIntervalSinceDate:status.createdAt];
+    int minutes = secondsBetween / 60;
+    cell.timeLabel.text = [NSString stringWithFormat:@"%dm", minutes];
     
     return cell;
 }

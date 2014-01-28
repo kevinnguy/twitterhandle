@@ -13,4 +13,5 @@
 @interface THTableViewCell : SWTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @end
