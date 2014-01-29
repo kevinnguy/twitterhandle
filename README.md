@@ -1,3 +1,17 @@
+Twitter Handle
+==================
+A simple Twitter client that allows you to read your timeline and look at other user's profiles and past tweets.
+
+Build Instructions
+==================
+To build, first do a 
+
+```
+pod install
+```
+
+and then open the workspace and you should be able to build and run the project.
+
 Frameworks
 ============
 - [STTwitter] [1]
