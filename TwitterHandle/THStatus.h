@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "THUser.h"
 @interface THStatus : NSObject
+@property (nonatomic, copy, readonly) NSString *statusId;
 @property (nonatomic, strong, readonly) NSDate *createdAt;
 @property (nonatomic, strong, readonly) NSArray *hashtags;
 @property (nonatomic, strong, readonly) NSArray *symbols;

@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A5E96E31898C81F00EDDA22 /* THTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E96E21898C81F00EDDA22 /* THTableViewController.m */; };
+		0A5E96E61898CDA100EDDA22 /* THTimelineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E96E51898CDA100EDDA22 /* THTimelineTableViewController.m */; };
+		0A5E96E91898D17F00EDDA22 /* THUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E96E81898D17F00EDDA22 /* THUserTableViewController.m */; };
+		0A5E96EC1898D5EE00EDDA22 /* THStatusTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E96EB1898D5EE00EDDA22 /* THStatusTableViewController.m */; };
+		0A5E96EE1898D62B00EDDA22 /* THStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5E96ED1898D62B00EDDA22 /* THStatusView.xib */; };
+		0A5E96F11898DB2C00EDDA22 /* THStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E96F01898DB2C00EDDA22 /* THStatusView.m */; };
 		0A6612CC1897323C00142624 /* THTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A6612CB1897323C00142624 /* THTableViewCell.xib */; };
 		0A6612CF1897337400142624 /* THTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6612CE1897337400142624 /* THTableViewCell.m */; };
 		0A6612D91897824300142624 /* THStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6612D81897824300142624 /* THStatus.m */; };
 		0A6612DC189783EE00142624 /* THUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6612DB189783EE00142624 /* THUser.m */; };
-		0A6612DF1897934F00142624 /* THUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6612DE1897934F00142624 /* THUserController.m */; };
 		0A6612E11897A5D300142624 /* THBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A6612E01897A5D300142624 /* THBannerView.xib */; };
 		0A6612E41897A5E900142624 /* THBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6612E31897A5E900142624 /* THBannerView.m */; };
 		0ACB1FEE18972DDA00A41D0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACB1FED18972DDA00A41D0D /* Foundation.framework */; };
@@ -22,7 +27,6 @@
 		0ACB1FFE18972DDA00A41D0D /* THAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB1FFD18972DDA00A41D0D /* THAppDelegate.m */; };
 		0ACB200118972DDA00A41D0D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACB1FFF18972DDA00A41D0D /* Main_iPhone.storyboard */; };
 		0ACB200418972DDA00A41D0D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACB200218972DDA00A41D0D /* Main_iPad.storyboard */; };
-		0ACB200718972DDA00A41D0D /* THViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB200618972DDA00A41D0D /* THViewController.m */; };
 		0ACB200918972DDA00A41D0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACB200818972DDA00A41D0D /* Images.xcassets */; };
 		0ACB201018972DDA00A41D0D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACB200F18972DDA00A41D0D /* XCTest.framework */; };
 		0ACB201118972DDA00A41D0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACB1FED18972DDA00A41D0D /* Foundation.framework */; };
@@ -43,6 +47,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A5E96E11898C81F00EDDA22 /* THTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THTableViewController.h; sourceTree = "<group>"; };
+		0A5E96E21898C81F00EDDA22 /* THTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THTableViewController.m; sourceTree = "<group>"; };
+		0A5E96E41898CDA100EDDA22 /* THTimelineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THTimelineTableViewController.h; sourceTree = "<group>"; };
+		0A5E96E51898CDA100EDDA22 /* THTimelineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THTimelineTableViewController.m; sourceTree = "<group>"; };
+		0A5E96E71898D17F00EDDA22 /* THUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THUserTableViewController.h; sourceTree = "<group>"; };
+		0A5E96E81898D17F00EDDA22 /* THUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THUserTableViewController.m; sourceTree = "<group>"; };
+		0A5E96EA1898D5EE00EDDA22 /* THStatusTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THStatusTableViewController.h; sourceTree = "<group>"; };
+		0A5E96EB1898D5EE00EDDA22 /* THStatusTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THStatusTableViewController.m; sourceTree = "<group>"; };
+		0A5E96ED1898D62B00EDDA22 /* THStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THStatusView.xib; sourceTree = "<group>"; };
+		0A5E96EF1898DB2C00EDDA22 /* THStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THStatusView.h; sourceTree = "<group>"; };
+		0A5E96F01898DB2C00EDDA22 /* THStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THStatusView.m; sourceTree = "<group>"; };
 		0A6612CB1897323C00142624 /* THTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THTableViewCell.xib; sourceTree = "<group>"; };
 		0A6612CD1897337400142624 /* THTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THTableViewCell.h; sourceTree = "<group>"; };
 		0A6612CE1897337400142624 /* THTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THTableViewCell.m; sourceTree = "<group>"; };
@@ -50,8 +65,6 @@
 		0A6612D81897824300142624 /* THStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THStatus.m; sourceTree = "<group>"; };
 		0A6612DA189783EE00142624 /* THUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THUser.h; sourceTree = "<group>"; };
 		0A6612DB189783EE00142624 /* THUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THUser.m; sourceTree = "<group>"; };
-		0A6612DD1897934F00142624 /* THUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THUserController.h; sourceTree = "<group>"; };
-		0A6612DE1897934F00142624 /* THUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THUserController.m; sourceTree = "<group>"; };
 		0A6612E01897A5D300142624 /* THBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THBannerView.xib; sourceTree = "<group>"; };
 		0A6612E21897A5E900142624 /* THBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THBannerView.h; sourceTree = "<group>"; };
 		0A6612E31897A5E900142624 /* THBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THBannerView.m; sourceTree = "<group>"; };
@@ -67,8 +80,6 @@
 		0ACB1FFD18972DDA00A41D0D /* THAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THAppDelegate.m; sourceTree = "<group>"; };
 		0ACB200018972DDA00A41D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		0ACB200318972DDA00A41D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		0ACB200518972DDA00A41D0D /* THViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THViewController.h; sourceTree = "<group>"; };
-		0ACB200618972DDA00A41D0D /* THViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THViewController.m; sourceTree = "<group>"; };
 		0ACB200818972DDA00A41D0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0ACB200E18972DDA00A41D0D /* TwitterHandleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterHandleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACB200F18972DDA00A41D0D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -113,6 +124,9 @@
 				0A6612E01897A5D300142624 /* THBannerView.xib */,
 				0A6612E21897A5E900142624 /* THBannerView.h */,
 				0A6612E31897A5E900142624 /* THBannerView.m */,
+				0A5E96ED1898D62B00EDDA22 /* THStatusView.xib */,
+				0A5E96EF1898DB2C00EDDA22 /* THStatusView.h */,
+				0A5E96F01898DB2C00EDDA22 /* THStatusView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -120,10 +134,14 @@
 		0A6612D01897341800142624 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0ACB200518972DDA00A41D0D /* THViewController.h */,
-				0ACB200618972DDA00A41D0D /* THViewController.m */,
-				0A6612DD1897934F00142624 /* THUserController.h */,
-				0A6612DE1897934F00142624 /* THUserController.m */,
+				0A5E96E11898C81F00EDDA22 /* THTableViewController.h */,
+				0A5E96E21898C81F00EDDA22 /* THTableViewController.m */,
+				0A5E96E41898CDA100EDDA22 /* THTimelineTableViewController.h */,
+				0A5E96E51898CDA100EDDA22 /* THTimelineTableViewController.m */,
+				0A5E96E71898D17F00EDDA22 /* THUserTableViewController.h */,
+				0A5E96E81898D17F00EDDA22 /* THUserTableViewController.m */,
+				0A5E96EA1898D5EE00EDDA22 /* THStatusTableViewController.h */,
+				0A5E96EB1898D5EE00EDDA22 /* THStatusTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -301,6 +319,7 @@
 				0ACB200118972DDA00A41D0D /* Main_iPhone.storyboard in Resources */,
 				0A6612CC1897323C00142624 /* THTableViewCell.xib in Resources */,
 				0ACB1FF818972DDA00A41D0D /* InfoPlist.strings in Resources */,
+				0A5E96EE1898D62B00EDDA22 /* THStatusView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,14 +371,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ACB200718972DDA00A41D0D /* THViewController.m in Sources */,
-				0A6612DF1897934F00142624 /* THUserController.m in Sources */,
+				0A5E96E91898D17F00EDDA22 /* THUserTableViewController.m in Sources */,
+				0A5E96F11898DB2C00EDDA22 /* THStatusView.m in Sources */,
 				0ACB1FFE18972DDA00A41D0D /* THAppDelegate.m in Sources */,
 				0ACB1FFA18972DDA00A41D0D /* main.m in Sources */,
+				0A5E96E31898C81F00EDDA22 /* THTableViewController.m in Sources */,
 				0A6612D91897824300142624 /* THStatus.m in Sources */,
+				0A5E96E61898CDA100EDDA22 /* THTimelineTableViewController.m in Sources */,
 				0A6612DC189783EE00142624 /* THUser.m in Sources */,
 				0A6612E41897A5E900142624 /* THBannerView.m in Sources */,
 				0A6612CF1897337400142624 /* THTableViewCell.m in Sources */,
+				0A5E96EC1898D5EE00EDDA22 /* THStatusTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

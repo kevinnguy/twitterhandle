@@ -12,6 +12,8 @@
 
 - (id)initWithJSON:(NSDictionary *)jsonDictionary {
     if (self = [super init]) {
+        _statusId = jsonDictionary[@"id_str"];
+        
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
         [dateFormatter setLocale:usLocale];

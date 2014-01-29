@@ -1,22 +1,20 @@
 //
-//  THBannerView.m
+//  THStatusView.m
 //  TwitterHandle
 //
 //  Created by Kevin Nguy on 1/28/14.
 //  Copyright (c) 2014 Kevin Nguy. All rights reserved.
 //
 
-#import "THBannerView.h"
+#import "THStatusView.h"
 
-@implementation THBannerView
+@implementation THStatusView
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-
-        [self.bannerImageView setContentMode:UIViewContentModeScaleAspectFill];
     }
     return self;
 }
