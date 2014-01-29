@@ -12,6 +12,8 @@ pod install
 
 and then open the workspace and you should be able to build and run the project.
 
+To use the client with your Twitter account, you must be logged into Twitter on your device. You can configure your login credentials in Settings.
+
 Frameworks
 ============
 - [STTwitter] [1]
