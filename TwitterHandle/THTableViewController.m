@@ -106,13 +106,7 @@
     // Setup data
     THStatus *status = self.statusArray[indexPath.row];
     [cell.userImageView setImageWithURL:status.user.profileImageURL placeholderImage:[UIImage imageNamed:@"twitter"]];
-    
-    NSString *statusText = status.text;
-    for (NSDictionary *urlDictionary in status.urls) {
-        statusText = [statusText stringByReplacingOccurrencesOfString:urlDictionary[@"url"] withString:urlDictionary[@"display_url"]];
-    }
-    cell.statusLabel.text = statusText;
-    
+    cell.statusLabel.text = status.text;
     cell.timeLabel.text = [self getTimeBetweenFromDate:status.createdAt];
     
     return cell;

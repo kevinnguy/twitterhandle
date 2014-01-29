@@ -31,7 +31,7 @@ NSString * const kConsumerSecret = @"sj4COCp51j0SZAWRE4MVlgtqwbS29P2S7SDLmGfN58U
     __weak THTimelineTableViewController *weakSelf = self;
     [self.twitterAPI verifyCredentialsWithSuccessBlock:^(NSString *username) {
         // Get messages
-        [weakSelf.twitterAPI getHomeTimelineSinceID:nil count:30 successBlock:^(NSArray *statuses) {
+        [weakSelf.twitterAPI getHomeTimelineSinceID:nil count:100 successBlock:^(NSArray *statuses) {
             for (NSDictionary *jsonDictionary in statuses) {
                 THStatus *status = [[THStatus alloc] initWithJSON:jsonDictionary];
                 [weakSelf.statusArray addObject:status];

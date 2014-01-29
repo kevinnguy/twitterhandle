@@ -192,13 +192,13 @@
 		0ACB1FF318972DDA00A41D0D /* TwitterHandle */ = {
 			isa = PBXGroup;
 			children = (
-				0A6612D11897342A00142624 /* Models */,
-				0A6612CA1897322100142624 /* Views */,
-				0A6612D01897341800142624 /* Controllers */,
 				0ACB1FFC18972DDA00A41D0D /* THAppDelegate.h */,
 				0ACB1FFD18972DDA00A41D0D /* THAppDelegate.m */,
 				0ACB1FFF18972DDA00A41D0D /* Main_iPhone.storyboard */,
 				0ACB200218972DDA00A41D0D /* Main_iPad.storyboard */,
+				0A6612D11897342A00142624 /* Models */,
+				0A6612CA1897322100142624 /* Views */,
+				0A6612D01897341800142624 /* Controllers */,
 				0ACB200818972DDA00A41D0D /* Images.xcassets */,
 				0ACB1FF418972DDA00A41D0D /* Supporting Files */,
 			);

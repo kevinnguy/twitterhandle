@@ -7,6 +7,7 @@
 //
 
 #import "THUserTableViewController.h"
+#import "THStatusTableViewController.h"
 
 #import "THBannerView.h"
 
@@ -21,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = [@"@" stringByAppendingString:self.userName];
     [self setupTwitterAPI];
 }
 
@@ -40,15 +42,37 @@
         [bannerView.bannerImageView setImageWithURL:user.profileBannerImageURL placeholderImage:nil];
         [bannerView.profileImageView setImageWithURL:user.profileImageURL placeholderImage:nil];
         bannerView.nameLabel.text = user.name;
-        bannerView.screenNameLabel.text = user.screenName;
-        bannerView.followersLabel.text = [NSString stringWithFormat:@"%d", [user.followersCount intValue]];
-        bannerView.followingLabel.text = [NSString stringWithFormat:@"%d", [user.followersCount intValue]];
-        bannerView.tweetsLabel.text = [NSString stringWithFormat:@"%d", [user.followersCount intValue]];
+        bannerView.descriptionLabel.text = user.description;
         
         [weakSelf.tableView addParallaxWithView:bannerView andHeight:bannerView.frame.size.height];
         [weakSelf reloadTableViewData];
     } errorBlock:^(NSError *error) {
         
     }];
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"StatusSegue"]) {
+        THStatusTableViewController *destinationViewController = segue.destinationViewController;
+        destinationViewController.twitterAPI = self.twitterAPI;
+        destinationViewController.status = self.selectedStatus;
+    }
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectedStatus = self.statusArray[indexPath.row];
+
+    THStatusTableViewController *viewController = [[THStatusTableViewController alloc] init];
+    
+    viewController.twitterAPI = self.twitterAPI;
+    viewController.status = self.selectedStatus;
+    
+    viewController.edgesForExtendedLayout=UIRectEdgeNone;
+    viewController.extendedLayoutIncludesOpaqueBars=NO;
+    viewController.automaticallyAdjustsScrollViewInsets=NO;
+    
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 @end

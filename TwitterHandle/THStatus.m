@@ -33,8 +33,14 @@
         _favorited = jsonDictionary[@"favorited"];
         _retweetCount = jsonDictionary[@"retweet_count"];
         _retweeted = jsonDictionary[@"retweeted"];
-        _text = jsonDictionary[@"text"];
         _user = [[THUser alloc] initWithJSON:jsonDictionary[@"user"]];
+        
+        NSString *statusText = jsonDictionary[@"text"];
+        for (NSDictionary *urlDictionary in _urls) {
+            statusText = [statusText stringByReplacingOccurrencesOfString:urlDictionary[@"url"] withString:urlDictionary[@"display_url"]];
+        }
+        _text = statusText;
+
     }
     
     return self;

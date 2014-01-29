@@ -19,7 +19,7 @@
             </objects>
             <point key="canvasLocation" x="-334" y="101"/>
         </scene>
-        <!--Timeline Table View Controller-->
+        <!--Timeline Table View Controller - Timeline-->
         <scene sceneID="hN1-Nk-Xnn">
             <objects>
                 <tableViewController id="bK0-kz-r2g" customClass="THTimelineTableViewController" sceneMemberID="viewController">
@@ -42,7 +42,7 @@
                             <outlet property="delegate" destination="bK0-kz-r2g" id="jYu-IW-gfm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="KAa-hX-GVc">
+                    <navigationItem key="navigationItem" title="Timeline" id="KAa-hX-GVc">
                         <barButtonItem key="leftBarButtonItem" title="Me" id="MQi-7D-38c">
                             <connections>
                                 <action selector="meButtonPressed:" destination="bK0-kz-r2g" id="PtM-Rs-dik"/>
@@ -63,7 +63,7 @@
             <objects>
                 <tableViewController id="RF6-L4-ZFI" customClass="THStatusTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="z79-dR-Vf2">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -83,6 +83,9 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="8c5-lJ-5TD"/>
+                    <connections>
+                        <segue destination="Xau-Pe-HEK" kind="push" identifier="UserSegue" id="2RI-3z-AsV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Duw-PA-Ail" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,7 +96,7 @@
             <objects>
                 <tableViewController id="Xau-Pe-HEK" customClass="THUserTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="u21-Fc-EYh">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -128,6 +131,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="2RI-3z-AsV"/>
         <segue reference="eoo-Cl-chc"/>
     </inferredMetricsTieBreakers>
 </document>
