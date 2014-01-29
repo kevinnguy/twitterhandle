@@ -38,6 +38,35 @@
     [self.tableView reloadData];
 }
 
+- (NSString *)getTimeBetweenFromDate:(NSDate *)date {
+    NSString *string;
+    NSTimeInterval secondsBetween = [self.today timeIntervalSinceDate:date];
+    int minutes = secondsBetween / 60;
+    
+    if (minutes < 60) {
+        if (minutes == 0) {
+            minutes = 1;
+        }
+        
+        string = [NSString stringWithFormat:@"%dm", minutes];
+    } else {
+        int hours = minutes / 60;
+        if (hours < 24) {
+            string = [NSString stringWithFormat:@"%dh", hours];
+        } else {
+            int days = hours / 24;
+            if (days < 365) {
+                string = [NSString stringWithFormat:@"%dd", days];
+            } else {
+                int years = days / 365;
+                string = [NSString stringWithFormat:@"%dy", years];
+            }
+        }
+    }
+    
+    return string;
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.statusArray.count;
@@ -84,9 +113,7 @@
     }
     cell.statusLabel.text = statusText;
     
-    NSTimeInterval secondsBetween = [self.today timeIntervalSinceDate:status.createdAt];
-    int minutes = secondsBetween / 60;
-    cell.timeLabel.text = [NSString stringWithFormat:@"%dm", minutes];
+    cell.timeLabel.text = [self getTimeBetweenFromDate:status.createdAt];
     
     return cell;
 }
@@ -100,6 +127,8 @@
             
         }
     }
+    
+    [cell hideUtilityButtonsAnimated:YES];
 }
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
@@ -110,6 +139,8 @@
             
         }
     }
+    
+    [cell hideUtilityButtonsAnimated:YES];
 }
 
 @end
